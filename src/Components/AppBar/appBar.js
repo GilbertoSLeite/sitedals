@@ -1,7 +1,6 @@
 import React from 'react';
 import {
     AppBar,
-    CssBaseline,
     IconButton,
     makeStyles,
     Toolbar
@@ -29,17 +28,14 @@ export default function AppBarSite() {
     const classes = useStyles();
 
     return (
-        <React.Fragment>
-            <CssBaseline />
-            <div className={classes.root}>
-                <AppBar position="static" className={classes.appBar}>
-                    <Toolbar>
-                        <IconButton>
-                            <MenuIcon />
-                        </IconButton>
-                    </Toolbar>
-                </AppBar>
-            </div>
-        </React.Fragment>
+        <div className={classes.root}>
+            <AppBar position="static" className={classes.appBar}>
+                <Toolbar className={classes.toolbar}>
+                    <IconButton>
+                        <MenuIcon />
+                    </IconButton>
+                </Toolbar>
+            </AppBar>
+        </div>
     );
 };

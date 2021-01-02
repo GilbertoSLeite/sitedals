@@ -1,125 +1,77 @@
-import React from 'react';
-import ls from '../../Files/iconspng.png';
-import { useTransition, useSpring, useChain } from 'react-spring';
-import dataHome from '../../Data/Home/dataHome';
-import Global from '../../Components/HomeAnimation/global';
-import Container from '../../Components/HomeAnimation/container';
-import Item from '../../Components/HomeAnimation/item';
-import HomeImage from '../../Pages/Home/homeImage';
-import {
-    Card,
-    CardActionArea,
-    CardContent,
-    Grid,
-    makeStyles,
-    Typography
-} from '@material-ui/core';
+import React from 'react'
+import { useTransition, animated } from 'react-spring'
+import shuffle from 'lodash/shuffle'
+import useMeasure from '../../Components/HomeAnimation/usoMedida';
+import useMedia from '../../Components/HomeAnimation/usoArquivo';
+import dataImageHome from '../../Data/Home/dataImageHome';
+import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
-    grid: {
-        width: "100%",
-        alignItems: "center",
+    list: {
+        boxSizing: 'border-box',
+        position: 'relative',
+        fontFamily: '-apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif',
+        width: '100%',
+        height: '100%',
+        '& div': {
+            position: 'absolute',
+            willChange: 'transform, width, height, opacity',
+            padding: '15px',
+            '& div': {
+                position: 'relative',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center center',
+                width: '100%',
+                height: '100%',
+                overflow: 'hidden',
+                textTransform: 'uppercase',
+                fontSize: '10px',
+                lineHeight: '10px',
+                borderRadius: '5px',
+                boxShadow: '0px 10px 50px -10px rgba(41, 173, 191, 1)'
+            }
+        }
     },
-    card: {
-        backgroundColor: '#152445',
-        opacity: '85%',
-    },
-    CardContent: {
-        backgroundColor: '#152445',
-        opacity: '90%',
-    },
-}))
+}));
 
 export default function HomeSite() {
 
     const classes = useStyles();
 
-    const [open, setOpen] = React.useState(false);
+    const columns = useMedia(['(min-width: 1500px)', '(min-width: 1000px)', '(min-width: 600px)'], [5, 4, 3], 2)
+    const [bind, { width }] = useMeasure();
+    const [items, set] = React.useState(dataImageHome);
 
-    const springRef = React.useRef();
-    const { size, opacity, freq, scale, transform, ...rest } = useSpring({
-        ref: springRef,
-        config: { duration: 250 },
-        from: { scale: 10, opacity: 0, transform: 'scale(0.9)', freq: '0.0175, 0.0', size: '20%', backgroundImage: `url(${ls})`, backgroundPosition: 'center', backgroundSize: '50%', backgroundRepeat: 'no-repeat' },
-        to: { scale: 150, opacity: 1, transform: 'scale(1)', freq: '0.0, 0.0', size: open ? '100%' : '20%', backgroundImage: open ? `url(${ls})` : `url(${ls})` }
-    });
+    React.useEffect(() => void setInterval(() => set(shuffle), 2000), [])
+    const [heights, gridItems] = React.useMemo(() => {
+        let heights = new Array(columns).fill(0)
+        let gridItems = items.map((child, i) => {
+            const column = heights.indexOf(Math.min(...heights))
+            const xy = [(width / columns) * column, (heights[column] += child.height / 2) - child.height / 2]
+            return { ...child, xy, width: width / columns, height: child.height / 2 }
+        })
+        return [heights, gridItems]
+    }, [columns, items, width])
 
-    const transRef = React.useRef();
-
-    const transitions = useTransition(open ? dataHome : [], item => item.name, {
-        ref: transRef,
-        unique: true,
-        trail: 400 / dataHome.length,
-        from: { opacity: 0, transform: 'scale(0)' },
-        enter: { opacity: 1, transform: 'scale(1)' },
-        leave: { opacity: 0, transform: 'scale(0)' }
-    });
-
-    useChain(open ? [springRef, transRef] : [transRef, springRef], [0, open ? 0.1 : 0.6])
-
-    const [props, setProps] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }));
-
-    const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
-    const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+    const transitions = useTransition(gridItems, (item) => item.urlImage, {
+        from: ({ xy, width, height }) => ({ xy, width, height, opacity: 0 }),
+        enter: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),
+        update: ({ xy, width, height }) => ({ xy, width, height }),
+        leave: { height: 0, opacity: 0 },
+        config: { mass: 5, tension: 500, friction: 100 },
+        trail: 25
+    })
 
     return (
-        <React.Fragment>
-            <Grid
-                container
-                justify="center"
-            >
-                <Grid
-                    id='GridHome'
-                    spacing={3}
-                    alignItems="center"
-                    justify="center"
-                    container
-                    className={classes.grid}
-                >
-                    <Grid
-                        item
-                        alignItems="center"
-                        justify="center"
-                        xs={12}
-                        sm={12}
-                    >
-                        {/*<Global />
-                       <HomeImage />
-                        <Container style={{ ...rest, width: size, height: size, backgroundImage: `url(${ls})` }} onClick={() => setOpen(open => !open)}>
-                            {transitions.map(({ item, key, prop }) => (
-                                <Item
-                                    key={key}
-                                    style={{ ...prop, transform: props.xys.interpolate(trans), background: item.css }}
-
-                                    onMouseMove={({ clientX: x, clientY: y }) => setProps({ xys: calc(x, y) })}
-                                    onMouseLeave={() => setProps({ xys: [0, 0, 1] })}
-                                >
-                                    {item.name}
-                                </Item>
-                            ))}
-                        </Container>*/}
-                        <Card
-                            className={classes.card}
-                        >
-                            <CardContent
-                                className={classes.CardContent}
-                            >
-                                <Typography
-                                    gutterBottom
-                                    className={classes.tipografia}
-                                    align='center'
-                                    variant='h5'
-                                >
-                                    Quatidade de Cultivos
-                                </Typography>
-                                <CardActionArea>
-                                </CardActionArea>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                </Grid>
-            </Grid>
-        </React.Fragment>
-    );
-
+        <div
+            {...bind}
+            className={classes.list}
+            style={{ height: Math.max(...heights) }}>
+            {transitions.map(({ item, props: { xy, ...rest }, key }) => (
+                <animated.div key={key} style={{ transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`), ...rest }}>
+                    <div style={{ backgroundImage: item.urlImage }} />
+                </animated.div>
+            ))}
+        </div>
+    )
 };

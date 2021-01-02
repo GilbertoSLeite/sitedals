@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import {
     Facebook,
     Instagram,
@@ -7,8 +7,23 @@ import {
     Email,
 } from '@material-ui/icons';
 import { StyledProvider, Footer } from 'components-extra';
-import tema from '../../Tema/tema';
 import ls from '../../Files/iconspng.png';
+
+const tema = createMuiTheme({
+    palette: {
+        common: {
+            black: '#666666',
+            white: '#fff'
+        },
+        type: 'dark',
+        primary: {
+            main: '#fff',
+            light: 'rgba(74, 128, 153, 1)',
+            dark: 'rgba(74, 128, 153, 1)',
+            contrastText: '#000201'
+        },
+    }
+})
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -86,7 +101,6 @@ export default function FooterSite() {
         window.open(url, '_blank');
     };
 
-    //image={{image: ls}}
     return (
         <StyledProvider theme={tema}>
             <Footer className={classes.imagem}>
@@ -94,16 +108,23 @@ export default function FooterSite() {
                     <Footer.Item >
                         LS Consultoria & Sistemas LTDA
                     </Footer.Item>
-                    <Footer.Item icon={<AccountCircle className={classes.footer} />} className={classes.footer} onClick={newTabLS}>
+                    <Footer.Item
+                        icon={<AccountCircle className={classes.footer} />}
+                        className={classes.footer} onClick={newTabLS}>
                         Institucional
                     </Footer.Item>
-                    <Footer.Item icon={<Instagram />} onClick={newTabInst}>
+                    <Footer.Item
+                        icon={<Instagram />}
+                        onClick={newTabInst}>
                         Instagram
                     </Footer.Item>
-                    <Footer.Item icon={<Facebook />} onClick={newTabFace}>
+                    <Footer.Item
+                        icon={<Facebook />}
+                        onClick={newTabFace}>
                         Facebook
                     </Footer.Item>
-                    <Footer.Item icon={<Email />}>
+                    <Footer.Item
+                        icon={<Email />}>
                         E-mail
                     </Footer.Item>
                 </Footer.Column>
