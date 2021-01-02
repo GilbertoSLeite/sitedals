@@ -1,0 +1,88 @@
+const dataImageHome = [
+    {
+        id: 1,
+        name: 'Vista Superior Cidade',
+        urlImage: 'url(https://images.unsplash.com/photo-1524775906432-f594cea0a926?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1334&q=80)',
+        credit: 'Photo by Sergio Souza',
+        height: 300,
+    },
+    {
+        id: 2,
+        name: 'Cidade Noite',
+        urlImage: 'url(https://images.unsplash.com/photo-1525935944571-4e99237764c9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80)',
+        credit: 'Photo by Takashi Watanabe',
+        height: 300,
+    },
+    {
+        id: 3,
+        name: 'Antenas no Céu',
+        urlImage: 'url(https://images.unsplash.com/photo-1607301695170-1c8c738cc6df?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80)',
+        credit: 'Photo by Jakub Pabis',
+        height: 300,
+    },
+    {
+        id: 4,
+        name: 'Casa Energia Solar',
+        urlImage: 'url(https://images.unsplash.com/photo-1596786436253-ebfe4360282d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80)',
+        credit: 'Photo by David Hohl',
+        height: 300,
+    },
+    {
+        id: 5,
+        name: 'Placas Solares',
+        urlImage: 'url(https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=752&q=80)',
+        credit: 'Photo by American Public Power Association',
+        height: 300,
+    },
+    {
+        id: 6,
+        name: 'Frutas Colheita',
+        urlImage: 'url(https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80)',
+        credit: 'Photo by Elaine Casap',
+        height: 300,
+    },
+    {
+        id: 7,
+        name: 'Horta Comunitária',
+        urlImage: 'url(https://images.unsplash.com/photo-1607109792536-fbccc49c82f7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80)',
+        credit: 'Photo by Tim Umphreys',
+        height: 300,
+    },
+    {
+        id: 8,
+        name: 'Placa Acessibilidade',
+        urlImage: 'url(https://images.unsplash.com/photo-1417551471850-924c48abad50?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80)',
+        credit: 'Photo by Paul Green',
+        height: 300,
+    },
+    {
+        id: 9,
+        name: 'Estacionamento Acessibilidade',
+        urlImage: 'url(https://images.unsplash.com/photo-1524513017549-db6af445c34a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=710&q=80)',
+        credit: 'Photo by Robert Ruggiero',
+        height: 300,
+    },
+    {
+        id: 10,
+        name: 'Computador',
+        urlImage: 'url(https://images.unsplash.com/photo-1547394765-185e1e68f34e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)',
+        credit: 'Photo by Christian Wiediger',
+        height: 300,
+    },
+    {
+        id: 11,
+        name: 'Mobilidade',
+        urlImage: 'url(https://images.unsplash.com/photo-1571779181091-c014b57dc198?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80)',
+        credit: 'Photo by Laurie Decroux',
+        height: 300,
+    },
+    {
+        id: 12,
+        name: 'Dashboard',
+        urlImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)',
+        credit: 'Photo by Luke Chesser',
+        height: 300,
+    },
+];
+
+export default dataImageHome;
