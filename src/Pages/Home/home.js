@@ -1,14 +1,10 @@
-import { Typography } from '@material-ui/core';
 import React from 'react';
-import HomeImage from './Imagens/homeImage';
-import HomePages from './Pages/homePages';
+import NewHome from './newHome';
 
 export default function HomeSite() {
     return (
         <React.Fragment>
-            <Typography paragraph></Typography>
-            <HomePages />
-            <HomeImage />
+            <NewHome />
         </React.Fragment>
     );
 };

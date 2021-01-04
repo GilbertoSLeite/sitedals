@@ -141,6 +141,11 @@ const openProjects = () => {
     window.location.href = url;
 };
 
+const openAboutUs = () => {
+    let url = '/sobrenos';
+    window.location.href = url;
+};
+
 export default function PagePrincipal() {
 
     const classes = useStyles();
@@ -196,6 +201,7 @@ export default function PagePrincipal() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsAbout({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsAbout({ xys: [0, 0, 1] })}
                                 style={{ transform: propsAbout.xys.interpolate(trans) }}
+                                onClick={openAboutUs}
                             >
                                 Sobre Nós
                             </animated.div>

@@ -5,7 +5,7 @@ import {
     makeStyles,
     Toolbar
 } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
+import HomeOutlined from '@material-ui/icons/HomeOutlined';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,12 +16,13 @@ const useStyles = makeStyles((theme) => ({
     },
     toolbar: {
         backgroundColor: '#ffff',
-        minHeight: 128,
-        alignItems: 'flex-start',
-        paddingTop: theme.spacing(1),
-        paddingBottom: theme.spacing(2),
     },
-}))
+}));
+
+const openHome = () => {
+    let url = '/home';
+    window.location.href = url;
+};
 
 export default function AppBarSite() {
 
@@ -30,9 +31,9 @@ export default function AppBarSite() {
     return (
         <div className={classes.root}>
             <AppBar position="static" className={classes.appBar}>
-                <Toolbar className={classes.toolbar}>
-                    <IconButton>
-                        <MenuIcon />
+                <Toolbar variant="dense" className={classes.toolbar}>
+                    <IconButton onClick={openHome}>
+                        <HomeOutlined />
                     </IconButton>
                 </Toolbar>
             </AppBar>

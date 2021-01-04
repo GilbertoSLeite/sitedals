@@ -19,7 +19,7 @@ const useStyles = makeStyles(() => ({
         },
         '&& div': {
             fontWeight: '600',
-            fontSize: '8em',
+            fontSize: '5em',
             willChange: 'opacity',
         },
     },
@@ -33,7 +33,6 @@ export default function HomePages() {
     const { x } = useSpring({ from: { x: 0 }, x: state ? 1 : 0, config: { duration: 1000 } });
 
     const openPrincipal = () => {
-        toggle(!state)
         let url = '/principal';
         window.location.href = url;
     };
@@ -41,7 +40,9 @@ export default function HomePages() {
     return (
         <div
             className={classes.root}
-            onClick={openPrincipal}>
+            onClick={openPrincipal}
+            onMouseMove={() => toggle(!state)}
+        >
             <animated.div
                 style={{
                     opacity: x.interpolate({ range: [0, 1], output: [0.3, 1] }),
