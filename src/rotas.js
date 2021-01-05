@@ -6,7 +6,6 @@ import AccountTree from '@material-ui/icons/AccountTree';
 import PageProjects from './Pages/Projetos/pageProjects';
 import InfoOutlined from '@material-ui/icons/InfoOutlined';
 import AboutUs from './Pages/About/aboutUs';
-import NewHome from './Pages/Home/newHome';
 
 const rotas = [
     {
@@ -17,22 +16,15 @@ const rotas = [
         layout: '/',
     },
     {
-        path: '/newhome',
-        name: 'New Home',
-        icon: HomeOutlined,
-        children: NewHome,
-        layout: '/',
-    },
-    {
         path: '/principal',
-        name: 'Início',
+        name: 'Principal',
         icon: PlayCircleFilledWhite,
         children: PagePrincipal,
         layout: '/',
     },
     {
         path: '/projetos',
-        name: 'Início',
+        name: 'Projetos',
         icon: AccountTree,
         children: PageProjects,
         layout: '/',

@@ -1,4 +1,4 @@
-import { CssBaseline, Grid, makeStyles, Typography } from '@material-ui/core';
+import { CardHeader, CssBaseline, Grid, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
 
@@ -187,9 +187,11 @@ export default function PagePrincipal() {
                                 onMouseLeave={() => setPropsProjects({ xys: [0, 0, 1] })}
                                 style={{ transform: propsProjects.xys.interpolate(trans) }}
                                 onClick={openProjects}
-                            >
-                                Projetos
-                            </animated.div>
+                            />
+                            <CardHeader
+                                title='Projetos'
+                                subheader='Apresentação dos projetos.'
+                            />
                         </Grid>
                         <Grid
                             item
@@ -202,9 +204,11 @@ export default function PagePrincipal() {
                                 onMouseLeave={() => setPropsAbout({ xys: [0, 0, 1] })}
                                 style={{ transform: propsAbout.xys.interpolate(trans) }}
                                 onClick={openAboutUs}
-                            >
-                                Sobre Nós
-                            </animated.div>
+                            />
+                            <CardHeader
+                                title='Sobre Nós'
+                                subheader='Um pouco da nossa história.'
+                            />
                         </Grid>
                         <Grid
                             item
@@ -216,9 +220,11 @@ export default function PagePrincipal() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsTeam({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsTeam({ xys: [0, 0, 1] })}
                                 style={{ transform: propsTeam.xys.interpolate(trans) }}
-                            >
-                                Nossa Equipe
-                            </animated.div>
+                            />
+                            <CardHeader
+                                title='Nossa Equipe'
+                                subheader='Conheça nossa equipe.'
+                            />
                         </Grid>
                         <Grid
                             item
@@ -230,9 +236,11 @@ export default function PagePrincipal() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsParter({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsParter({ xys: [0, 0, 1] })}
                                 style={{ transform: propsParter.xys.interpolate(trans) }}
-                            >
-                                Nossos Parceiros
-                            </animated.div>
+                            />
+                            <CardHeader
+                                title='Nossos Parceiros'
+                                subheader='Conheça nossos parceiros.'
+                            />
                         </Grid>
                         <Grid
                             item
@@ -244,9 +252,11 @@ export default function PagePrincipal() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsNews({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsNews({ xys: [0, 0, 1] })}
                                 style={{ transform: propsNews.xys.interpolate(trans) }}
-                            >
-                                Novidades
-                            </animated.div>
+                            />
+                            <CardHeader
+                                title='Novidades'
+                                subheader='Saiba novidades sobre nós e nossa equipe.'
+                            />
                         </Grid>
                         <Grid
                             item
@@ -258,9 +268,11 @@ export default function PagePrincipal() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsContact({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsContact({ xys: [0, 0, 1] })}
                                 style={{ transform: propsContact.xys.interpolate(trans) }}
-                            >
-                                Contato
-                            </animated.div>
+                            />
+                            <CardHeader
+                                title='Fale Conosco'
+                                subheader='Será um prazer lhe falar com você.'
+                            />
                         </Grid>
                     </Grid>
                 </Grid>

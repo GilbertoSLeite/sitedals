@@ -31,13 +31,13 @@ export default function Layout() {
 
     return (
         <React.Fragment>
-            <StyledProvider>
+            <StyledProvider injectFirst>
                 <CssBaseline />
                 <AppBarSite />
                 {Main}
                 <BackToTop size="small" />
-                <FooterSite />
             </StyledProvider>
+            <FooterSite />
         </React.Fragment>
     )
 }

@@ -33,10 +33,10 @@ const useStyles = makeStyles((theme) => ({
     imagem: {
         backgroundImage: `url(${ls})`,
         backgroundRepeat: 'no-repeat',
-        backgroundColor: '#ffffff', //,theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
-        backgroundSize: '25%',
+        backgroundColor: 'transparent', //,theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+        backgroundSize: '18%',
         backgroundPosition: 'center',
-        color: '#ffffff',
+        color: 'transparent',
     },
     container: {
         marginTop: theme.spacing(8),
@@ -102,7 +102,7 @@ export default function FooterSite() {
     };
 
     return (
-        <StyledProvider theme={tema}>
+        <StyledProvider theme={tema} injectFirst>
             <Footer className={classes.imagem}>
                 <Footer.Column>
                     <Footer.Item >

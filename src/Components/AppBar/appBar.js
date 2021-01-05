@@ -11,12 +11,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
-    appbar: {
-        backgroundColor: '#ffff'
-    },
-    toolbar: {
-        backgroundColor: '#ffff',
-    },
 }));
 
 const openHome = () => {
@@ -30,8 +24,8 @@ export default function AppBarSite() {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static" className={classes.appBar}>
-                <Toolbar variant="dense" className={classes.toolbar}>
+            <AppBar position="static" color='transparent' >
+                <Toolbar>
                     <IconButton onClick={openHome}>
                         <HomeOutlined />
                     </IconButton>

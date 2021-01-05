@@ -17,15 +17,18 @@ export default function LogoEffect() {
     });
 
     function openPrincipal() {
-        let url = '/principal';
-        window.location.href = url;
+        setActive(active);
+        setTimeout(() => {
+            let url = '/principal';
+            window.location.href = url;
+        }, 1500);
     };
 
     const Active = () => {
         setActive(!active)
         setTimeout(() => {
             openPrincipal()
-        }, 1800);
+        }, 2000);
     };
 
     return (
