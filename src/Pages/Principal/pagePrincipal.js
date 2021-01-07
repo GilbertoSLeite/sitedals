@@ -131,6 +131,10 @@ const useStyles = makeStyles(() => ({
         width: "100%",
         alignItems: 'center',
     },
+    tipografia: {
+        fontWeight: 800,
+        userSelect: 'none'
+    }
 }));
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
@@ -143,6 +147,16 @@ const openProjects = () => {
 
 const openAboutUs = () => {
     let url = '/sobrenos';
+    window.location.href = url;
+};
+
+const openTeamLS = () => {
+    let url = '/equipe';
+    window.location.href = url;
+};
+
+const openParceirosLS = () => {
+    let url = '/parceiros';
     window.location.href = url;
 };
 
@@ -191,6 +205,7 @@ export default function PagePrincipal() {
                             <CardHeader
                                 title='Projetos'
                                 subheader='Apresentação dos projetos.'
+                                className={classes.tipografia}
                             />
                         </Grid>
                         <Grid
@@ -208,6 +223,7 @@ export default function PagePrincipal() {
                             <CardHeader
                                 title='Sobre Nós'
                                 subheader='Um pouco da nossa história.'
+                                className={classes.tipografia}
                             />
                         </Grid>
                         <Grid
@@ -220,10 +236,12 @@ export default function PagePrincipal() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsTeam({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsTeam({ xys: [0, 0, 1] })}
                                 style={{ transform: propsTeam.xys.interpolate(trans) }}
+                                onClick={openTeamLS}
                             />
                             <CardHeader
                                 title='Nossa Equipe'
                                 subheader='Conheça nossa equipe.'
+                                className={classes.tipografia}
                             />
                         </Grid>
                         <Grid
@@ -236,10 +254,12 @@ export default function PagePrincipal() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsParter({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsParter({ xys: [0, 0, 1] })}
                                 style={{ transform: propsParter.xys.interpolate(trans) }}
+                                onClick={openParceirosLS}
                             />
                             <CardHeader
                                 title='Nossos Parceiros'
                                 subheader='Conheça nossos parceiros.'
+                                className={classes.tipografia}
                             />
                         </Grid>
                         <Grid
@@ -256,6 +276,7 @@ export default function PagePrincipal() {
                             <CardHeader
                                 title='Novidades'
                                 subheader='Saiba novidades sobre nós e nossa equipe.'
+                                className={classes.tipografia}
                             />
                         </Grid>
                         <Grid
@@ -272,6 +293,7 @@ export default function PagePrincipal() {
                             <CardHeader
                                 title='Fale Conosco'
                                 subheader='Será um prazer lhe falar com você.'
+                                className={classes.tipografia}
                             />
                         </Grid>
                     </Grid>

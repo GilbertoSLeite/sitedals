@@ -6,6 +6,9 @@ import AccountTree from '@material-ui/icons/AccountTree';
 import PageProjects from './Pages/Projetos/pageProjects';
 import InfoOutlined from '@material-ui/icons/InfoOutlined';
 import AboutUs from './Pages/About/aboutUs';
+import PeopleOutlined from '@material-ui/icons/PeopleOutlined';
+import TeamLS from './Pages/Team/team';
+import Parceiros from './Pages/Parceiros/parceiros';
 
 const rotas = [
     {
@@ -35,7 +38,22 @@ const rotas = [
         icon: InfoOutlined,
         children: AboutUs,
         layout: '/',
-    }
+    },
+    {
+        path: '/equipe',
+        name: 'Nossa Equipe',
+        icon: PeopleOutlined,
+        children: TeamLS,
+        layout: '/',
+    },
+    {
+        path: '/parceiros',
+        name: 'Nossos Parceiros',
+        icon: PeopleOutlined,
+        children: Parceiros,
+        layout: '/',
+    },
+
 ];
 
 export default rotas;

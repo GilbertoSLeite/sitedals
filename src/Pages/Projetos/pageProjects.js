@@ -204,6 +204,10 @@ const useStyles = makeStyles(() => ({
         width: "100%",
         alignItems: 'center',
     },
+    tipografia: {
+        fontWeight: 800,
+        userSelect: 'none'
+    }
 }));
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
@@ -268,6 +272,7 @@ export default function PageProjects() {
                                 <Typography
                                     variant='h6'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Árvore Digital
                                 </Typography>
@@ -276,6 +281,7 @@ export default function PageProjects() {
                                     color='textSecondary'
                                     component='p'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Tecnologia & Inovação
                                 </Typography>
@@ -297,6 +303,7 @@ export default function PageProjects() {
                                 <Typography
                                     variant='h6'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Plano Diretor de Cidade Inteligente
                                 </Typography>
@@ -305,6 +312,7 @@ export default function PageProjects() {
                                     color='textSecondary'
                                     component='p'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Governança
                                 </Typography>
@@ -325,6 +333,7 @@ export default function PageProjects() {
                                 <Typography
                                     variant='h6'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Horta Comunitária
                                     </Typography>
@@ -333,6 +342,7 @@ export default function PageProjects() {
                                     color='textSecondary'
                                     component='p'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Meio Ambiente
                                     </Typography>
@@ -353,6 +363,7 @@ export default function PageProjects() {
                                 <Typography
                                     variant='h6'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Gestão de Horta Comunitária
                                 </Typography>
@@ -361,6 +372,7 @@ export default function PageProjects() {
                                     color='textSecondary'
                                     component='p'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Governança - Software - Tecnologia & Inovação
                                </Typography>
@@ -381,6 +393,7 @@ export default function PageProjects() {
                                 <Typography
                                     variant='h6'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Energia Solar
                                     </Typography>
@@ -389,6 +402,7 @@ export default function PageProjects() {
                                     color='textSecondary'
                                     component='p'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Energia - Sustentabilidade
                                    </Typography>
@@ -409,6 +423,7 @@ export default function PageProjects() {
                                 <Typography
                                     variant='h6'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Combate a Doenças Infectocontagiosa
                                 </Typography>
@@ -417,6 +432,7 @@ export default function PageProjects() {
                                     color='textSecondary'
                                     component='p'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Governança - Software - Tecnologia & Inovação
                                     </Typography>
@@ -437,6 +453,7 @@ export default function PageProjects() {
                                 <Typography
                                     variant='h6'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Projetos com Realidade Virtual
                                 </Typography>
@@ -445,6 +462,7 @@ export default function PageProjects() {
                                     color='textSecondary'
                                     component='p'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Tecnologia & Inovação
                                 </Typography>
@@ -465,6 +483,7 @@ export default function PageProjects() {
                                 <Typography
                                     variant='h6'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Plano Diretor Desenvolvimento Urbano
                                 </Typography>
@@ -473,6 +492,7 @@ export default function PageProjects() {
                                     color='textSecondary'
                                     component='p'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Governança
                                 </Typography>
@@ -493,6 +513,7 @@ export default function PageProjects() {
                                 <Typography
                                     variant='h6'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Educação & Tecnologia
                                 </Typography>
@@ -501,6 +522,7 @@ export default function PageProjects() {
                                     color='textSecondary'
                                     component='p'
                                     align='center'
+                                    className={classes.tipografia}
                                 >
                                     Educação - Tecnologia & Inovação
                                 </Typography>
