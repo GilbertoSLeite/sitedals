@@ -16,6 +16,7 @@ const useStyles = makeStyles(() => ({
         width: '100%',
         height: '100%',
         padding: '1rem',
+        borderRadius: '20px',
     },
     sliderImages: {
         width: '100%',
@@ -23,7 +24,7 @@ const useStyles = makeStyles(() => ({
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center, center',
-    }
+    },
 }));
 
 export default function ArvoreImagens() {

@@ -8,42 +8,38 @@ const data = [
         title: "Prefeitua Municipal de Amargosa",
         subtitle: 'Primeira Cidade Inteligente da Bahia',
         css: `url(${amargosa})`,
-        height: 100,
-        width: 300
+        marginleft: 0,
+        altura: 300,
+        largura: 300,
+        borderradius: '20px',
     },
     {
         title: "Classcon Contabilidade",
         subtitle: 'Empresa de Contabilidade em Lauro de Freitas',
         css: `url(${classcon})`,
-        height: 100,
-        width: 300
+        marginleft: 0,
+        altura: 300,
+        largura: 300,
+        borderradius: '20px',
     },
     {
         title: "GM Data",
         subtitle: 'Sistemas para Gestão Pública e Consultoria Patrimonial',
         css: `url(${gmdata})`,
-        height: 100,
-        width: 300
+        marginleft: 0,
+        altura: 300,
+        largura: 300,
+        borderradius: '20px',
     },
     {
         title: "RS Drone",
         subtitle: 'Empresa especialidade em imagens com drones.',
         css: `url(${rsdrone})`,
-        height: 100,
-        width: 300
-    },/*
-    {
-        description: "#5ee7df → #b490ca",
-        css: "linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)",
-        height: 100,
-        width: 300
+        marginleft: 0,
+        altura: 300,
+        largura: 300,
+        borderradius: '20px',
     },
-    {
-        description: "#d299c2 → #fef9d7",
-        css: "linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)",
-        height: 100,
-        width: 300
-    }*/
 ];
 
 export default data;

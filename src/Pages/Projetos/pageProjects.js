@@ -218,8 +218,33 @@ const openDigitalTree = () => {
     window.location.href = url;
 };
 
-const openAboutUs = () => {
-    let url = '/sobrenos';
+const openPDCI = () => {
+    let url = '/pdci';
+    window.location.href = url;
+};
+
+const openHorta = () => {
+    let url = '/hortacomunitaria';
+    window.location.href = url;
+};
+
+const openSoftHorta = () => {
+    let url = '/softwarehortacomunitaria';
+    window.location.href = url;
+};
+
+const openCDCI = () => {
+    let url = '/cdci';
+    window.location.href = url;
+};
+
+const openRV = () => {
+    let url = '/rv';
+    window.location.href = url;
+};
+
+const openES = () => {
+    let url = '/energiasolar';
     window.location.href = url;
 };
 
@@ -297,7 +322,7 @@ export default function PageProjects() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsPDCI({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsPDCI({ xys: [0, 0, 1] })}
                                 style={{ transform: propsPDCI.xys.interpolate(trans) }}
-                                onClick={openAboutUs}
+                                onClick={openPDCI}
                             />
                             <CardContent>
                                 <Typography
@@ -328,6 +353,7 @@ export default function PageProjects() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsHorta({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsHorta({ xys: [0, 0, 1] })}
                                 style={{ transform: propsHorta.xys.interpolate(trans) }}
+                                onClick={openHorta}
                             />
                             <CardContent>
                                 <Typography
@@ -358,6 +384,7 @@ export default function PageProjects() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropSGH({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropSGH({ xys: [0, 0, 1] })}
                                 style={{ transform: propSGH.xys.interpolate(trans) }}
+                                onClick={openSoftHorta}
                             />
                             <CardContent>
                                 <Typography
@@ -373,6 +400,7 @@ export default function PageProjects() {
                                     component='p'
                                     align='center'
                                     className={classes.tipografia}
+                                    onClick={openSoftHorta}
                                 >
                                     Governança - Software - Tecnologia & Inovação
                                </Typography>
@@ -388,6 +416,7 @@ export default function PageProjects() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsEnergiaSolar({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsEnergiaSolar({ xys: [0, 0, 1] })}
                                 style={{ transform: propsEnergiaSolar.xys.interpolate(trans) }}
+                                onClick={openES}
                             />
                             <CardContent>
                                 <Typography
@@ -418,6 +447,7 @@ export default function PageProjects() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsCDCI({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsCDCI({ xys: [0, 0, 1] })}
                                 style={{ transform: propsCDCI.xys.interpolate(trans) }}
+                                onClick={openCDCI}
                             />
                             <CardContent>
                                 <Typography
@@ -448,6 +478,7 @@ export default function PageProjects() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsRV({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsRV({ xys: [0, 0, 1] })}
                                 style={{ transform: propsRV.xys.interpolate(trans) }}
+                                onClick={openRV}
                             />
                             <CardContent>
                                 <Typography

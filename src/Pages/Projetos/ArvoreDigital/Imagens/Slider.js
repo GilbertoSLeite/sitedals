@@ -14,6 +14,7 @@ const styles = {
         alignContent: 'center',
         alignItems: 'center',
         justifyContent: 'center',
+        borderRadius: '20px',
     }
 };
 

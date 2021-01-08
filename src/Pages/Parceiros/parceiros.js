@@ -24,6 +24,12 @@ const useStyles = makeStyles(() => ({
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center, center',
+    },
+    cardHeader: {
+        alignItems: 'center',
+        alignContent: 'center',
+        justifyContent: 'center',
+        fontWeight: 800,
     }
 }));
 
@@ -39,15 +45,28 @@ export default function Parceiros() {
                     width={450}
                     visible={3}
                 >
-                    {({ css, title, subtitle }, i) => (
+                    {({
+                        css,
+                        title,
+                        subtitle,
+                        marginleft,
+                        altura,
+                        largura,
+                        borderradius
+                    }, i) => (
                         <div className={classes.sliderInternal}>
                             <CardHeader
                                 title={title}
                                 subheader={subtitle}
+                                className={classes.cardHeader}
                             />
                             <div
                                 style={{
-                                    backgroundImage: css
+                                    backgroundImage: css,
+                                    marginLeft: marginleft,
+                                    height: altura,
+                                    width: largura,
+                                    borderRadius: borderradius,
                                 }}
                                 className={classes.sliderImages} />
                         </div>

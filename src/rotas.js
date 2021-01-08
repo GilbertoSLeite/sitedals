@@ -12,6 +12,16 @@ import Parceiros from './Pages/Parceiros/parceiros';
 import NatureOutlined from '@material-ui/icons/NatureOutlined';
 import ArvoreDigital from './Pages/Projetos/ArvoreDigital/arvoreDigital';
 import ArvoreImagens from './Pages/Projetos/ArvoreDigital/Imagens/arvoreImagens';
+import GavelOutlined from '@material-ui/icons/GavelOutlined';
+import PDCI from './Pages/Projetos/PDCI/pdci';
+import HortaComunitaria from './Pages/Projetos/HortaComunitaria/hortaComunitaria';
+import SoftHortaComunitaria from './Pages/Projetos/SoftHorta/softHorta';
+import HealingOutlined from '@material-ui/icons/HealingOutlined';
+import CDCI from './Pages/Projetos/CDIC/cdic';
+import AirplayOutlined from '@material-ui/icons/AirplayOutlined';
+import RealidadeVirtual from './Pages/Projetos/RealidadeVirtual/rv';
+import WbSunny from '@material-ui/icons/WbSunny';
+import EnergiaSolar from './Pages/Projetos/EnergiaSolar/energiaSolar';
 
 const rotas = [
     {
@@ -68,6 +78,48 @@ const rotas = [
         name: 'Árvore Digital',
         icon: NatureOutlined,
         children: ArvoreImagens,
+        layout: '/',
+    },
+    {
+        path: '/pdci',
+        name: 'PDCI',
+        icon: GavelOutlined,
+        children: PDCI,
+        layout: '/',
+    },
+    {
+        path: '/hortacomunitaria',
+        name: 'Horta Comunitária',
+        icon: NatureOutlined,
+        children: HortaComunitaria,
+        layout: '/',
+    },
+    {
+        path: '/softwarehortacomunitaria',
+        name: 'Software para Gestão de Horta Comunitária',
+        icon: NatureOutlined,
+        children: SoftHortaComunitaria,
+        layout: '/',
+    },
+    {
+        path: '/cdci',
+        name: 'Software de Combate a Doenças Infectocontagiosa',
+        icon: HealingOutlined,
+        children: CDCI,
+        layout: '/',
+    },
+    {
+        path: '/rv',
+        name: 'Realidade Virtual',
+        icon: AirplayOutlined,
+        children: RealidadeVirtual,
+        layout: '/',
+    },
+    {
+        path: '/energiasolar',
+        name: 'Energia Solar',
+        icon: WbSunny,
+        children: EnergiaSolar,
         layout: '/',
     },
 ];

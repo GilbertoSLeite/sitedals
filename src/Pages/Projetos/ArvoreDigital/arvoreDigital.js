@@ -8,6 +8,8 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
+import Avatar from '@material-ui/core/Avatar';
+import ls from '../../../Files/iconspng.png'
 
 const styles = (theme) => ({
     root: {
@@ -16,6 +18,8 @@ const styles = (theme) => ({
     },
     tipografiaTitle: {
         fontWeight: 800,
+        alignContent: 'center',
+        justifyContent: 'center',
     },
     closeButton: {
         position: 'absolute',
@@ -29,6 +33,10 @@ const DialogTitle = withStyles(styles)((props) => {
     const { children, classes, onClose, ...other } = props;
     return (
         <MuiDialogTitle disableTypography className={classes.root} {...other}>
+            <Avatar
+                variant='circular'
+                src={ls}
+            />
             <Typography
                 variant="h6"
                 align='center'
@@ -87,10 +95,9 @@ export default function ArvoreDigital() {
                         variant='body1'
                         align='justify'
                     >
-                        A Árvore Digital, desenvolvida alinhado com os indicadores da NBR ISO 37120 de Tecnologia,
-                        Sustentabilidade e Inovação, vem sendo um projeto de tecnologia e inovacação que vem mudando a
-                        história da inclusão social e sustentabilidade na Bahia, disponibilizando aos munícipes funcionalidades
-                        através dos seguintes itens:
+                        A Árvore Digital, desenvolvida baseada nos indicadores da NBR ISO 37120 de Tecnologia,
+                        Sustentabilidade e Inovação. Tem sindo um projeto que vem mudando a história da inclusão social e
+                        sustentabilidade na Bahia, disponibilizando aos munícipes funcionalidades através dos seguintes itens:
                         </Typography>
                     <Typography
                         paragraph
