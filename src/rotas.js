@@ -9,6 +9,9 @@ import AboutUs from './Pages/About/aboutUs';
 import PeopleOutlined from '@material-ui/icons/PeopleOutlined';
 import TeamLS from './Pages/Team/team';
 import Parceiros from './Pages/Parceiros/parceiros';
+import NatureOutlined from '@material-ui/icons/NatureOutlined';
+import ArvoreDigital from './Pages/Projetos/ArvoreDigital/arvoreDigital';
+import ArvoreImagens from './Pages/Projetos/ArvoreDigital/Imagens/arvoreImagens';
 
 const rotas = [
     {
@@ -53,7 +56,20 @@ const rotas = [
         children: Parceiros,
         layout: '/',
     },
-
+    {
+        path: '/arvoredigital',
+        name: 'Árvore Digital',
+        icon: NatureOutlined,
+        children: ArvoreDigital,
+        layout: '/',
+    },
+    {
+        path: '/arvoredigitalimages',
+        name: 'Árvore Digital',
+        icon: NatureOutlined,
+        children: ArvoreImagens,
+        layout: '/',
+    },
 ];
 
 export default rotas;

@@ -213,8 +213,8 @@ const useStyles = makeStyles(() => ({
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
-const openProjects = () => {
-    let url = '/projetos';
+const openDigitalTree = () => {
+    let url = '/arvoredigital';
     window.location.href = url;
 };
 
@@ -266,7 +266,7 @@ export default function PageProjects() {
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsArvoreDigital({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsArvoreDigital({ xys: [0, 0, 1] })}
                                 style={{ transform: propsArvoreDigital.xys.interpolate(trans), justifyContent: 'center', alignItems: 'center' }}
-                                onClick={openProjects}
+                                onClick={openDigitalTree}
                             />
                             <CardContent>
                                 <Typography

@@ -1,6 +1,6 @@
 import classcon from './imagens/2020-09-04.jpg';
 import amargosa from './imagens/Amargosa.png';
-import gmdata from './imagens/gmdata.png';
+import gmdata from './imagens/gmdata.jpg';
 import rsdrone from './imagens/rsdrone.png';
 
 const data = [
