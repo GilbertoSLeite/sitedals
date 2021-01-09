@@ -46,7 +46,7 @@ const useStyles = makeStyles(() => ({
         '& hover': {
             boxShadow: '0px 10px 50px -10px rgba(41, 173, 191, 1)',
         },
-        fontWeight: '800',
+        fontWeight: 800,
         fontFamily: 'roboto',
         color: '#ffff',
         alignItems: 'center',
@@ -67,7 +67,7 @@ const useStyles = makeStyles(() => ({
         '& hover': {
             boxShadow: '0px 10px 50px -10px rgba(41, 173, 191, 1)',
         },
-        fontWeight: '800',
+        fontWeight: 800,
         fontFamily: 'roboto',
         color: '#ffff',
         alignItems: 'center',
@@ -88,7 +88,7 @@ const useStyles = makeStyles(() => ({
         '& hover': {
             boxShadow: '0px 10px 50px -10px rgba(41, 173, 191, 1)',
         },
-        fontWeight: '800',
+        fontWeight: 800,
         fontFamily: 'roboto',
         color: '#ffff',
         alignItems: 'center',
@@ -109,7 +109,7 @@ const useStyles = makeStyles(() => ({
         '& hover': {
             boxShadow: '0px 10px 50px -10px rgba(41, 173, 191, 1)',
         },
-        fontWeight: '800',
+        fontWeight: 800,
         fontFamily: 'roboto',
         color: '#ffff',
         alignItems: 'center',
@@ -130,7 +130,7 @@ const useStyles = makeStyles(() => ({
         '& hover': {
             boxShadow: '0px 10px 50px -10px rgba(41, 173, 191, 1)',
         },
-        fontWeight: '800',
+        fontWeight: 800,
         fontFamily: 'roboto',
         color: '#ffff',
         alignItems: 'center',
@@ -151,7 +151,7 @@ const useStyles = makeStyles(() => ({
         '& hover': {
             boxShadow: '0px 10px 50px -10px rgba(41, 173, 191, 1)',
         },
-        fontWeight: '800',
+        fontWeight: 800,
         fontFamily: 'roboto',
         color: '#ffff',
         alignItems: 'center',
@@ -172,17 +172,17 @@ const useStyles = makeStyles(() => ({
         '& hover': {
             boxShadow: '0px 10px 50px -10px rgba(41, 173, 191, 1)',
         },
-        fontWeight: '800',
+        fontWeight: 800,
         fontFamily: 'roboto',
         color: '#ffff',
         alignItems: 'center',
         alignContent: 'center',
         justifyContent: 'center'
     },
-    cardEDU: {
+    cardCHAT: {
         width: '45ch',
         height: '45ch',
-        backgroundImage: `url(https://images.unsplash.com/photo-1424115087662-5845efc6b366?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80)`,
+        backgroundImage: `url(https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80)`,
         borderRadius: '10px',
         backgroundSize: 'cover',
         backgroundPosition: 'center, center',
@@ -193,7 +193,7 @@ const useStyles = makeStyles(() => ({
         '& hover': {
             boxShadow: '0px 10px 50px -10px rgba(41, 173, 191, 1)',
         },
-        fontWeight: '800',
+        fontWeight: 800,
         fontFamily: 'roboto',
         color: '#ffff',
         alignItems: 'center',
@@ -223,6 +223,11 @@ const openPDCI = () => {
     window.location.href = url;
 };
 
+const openPDDU = () => {
+    let url = '/pddu';
+    window.location.href = url;
+}
+
 const openHorta = () => {
     let url = '/hortacomunitaria';
     window.location.href = url;
@@ -245,6 +250,11 @@ const openRV = () => {
 
 const openES = () => {
     let url = '/energiasolar';
+    window.location.href = url;
+};
+
+const openChatBot = () => {
+    let url = '/chatbot';
     window.location.href = url;
 };
 
@@ -275,7 +285,7 @@ export default function PageProjects() {
                 >
                     <Grid
                         id="GridLine1"
-                        spacing={3}
+                        spacing={2}
                         alignItems="center"
                         justify="center"
                         container
@@ -283,14 +293,19 @@ export default function PageProjects() {
                     >
                         <Grid
                             item
-                            xs={12}
-                            sm={4}
+                            //xs={12}
+                            //sm={4}
+                            xs
                         >
                             <animated.div
                                 className={classes.cardArvore}
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsArvoreDigital({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsArvoreDigital({ xys: [0, 0, 1] })}
-                                style={{ transform: propsArvoreDigital.xys.interpolate(trans), justifyContent: 'center', alignItems: 'center' }}
+                                style={{
+                                    transform: propsArvoreDigital.xys.interpolate(trans),
+                                    justifyContent: 'center',
+                                    alignItems: 'center'
+                                }}
                                 onClick={openDigitalTree}
                             />
                             <CardContent>
@@ -314,8 +329,9 @@ export default function PageProjects() {
                         </Grid>
                         <Grid
                             item
-                            xs={12}
-                            sm={4}
+                            //xs={12}
+                            //sm={4}
+                            xs
                         >
                             <animated.div
                                 className={classes.cardPDCI}
@@ -345,8 +361,9 @@ export default function PageProjects() {
                         </Grid>
                         <Grid
                             item
-                            xs={12}
-                            sm={4}
+                            //xs={12}
+                            //sm={4}
+                            xs
                         >
                             <animated.div
                                 className={classes.cardHorta}
@@ -376,8 +393,9 @@ export default function PageProjects() {
                         </Grid>
                         <Grid
                             item
-                            xs={12}
-                            sm={4}
+                            //xs={12}
+                            //sm={4}
+                            xs
                         >
                             <animated.div
                                 className={classes.cardSoftHorta}
@@ -408,8 +426,9 @@ export default function PageProjects() {
                         </Grid>
                         <Grid
                             item
-                            xs={12}
-                            sm={4}
+                            //xs={12}
+                            //sm={4}
+                            xs
                         >
                             <animated.div
                                 className={classes.cardSustentabilidade}
@@ -439,8 +458,9 @@ export default function PageProjects() {
                         </Grid>
                         <Grid
                             item
-                            xs={12}
-                            sm={4}
+                            //xs={12}
+                            //sm={4}
+                            xs
                         >
                             <animated.div
                                 className={classes.cardCDCI}
@@ -470,8 +490,9 @@ export default function PageProjects() {
                         </Grid>
                         <Grid
                             item
-                            xs={12}
-                            sm={4}
+                            //xs={12}
+                            //sm={4}
+                            xs
                         >
                             <animated.div
                                 className={classes.cardRV}
@@ -501,14 +522,16 @@ export default function PageProjects() {
                         </Grid>
                         <Grid
                             item
-                            xs={12}
-                            sm={4}
+                            //xs={12}
+                            //sm={4}
+                            xs
                         >
                             <animated.div
                                 className={classes.cardPDDU}
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsPDDU({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsPDDU({ xys: [0, 0, 1] })}
                                 style={{ transform: propsPDDU.xys.interpolate(trans) }}
+                                onClick={openPDDU}
                             />
                             <CardContent>
                                 <Typography
@@ -531,14 +554,16 @@ export default function PageProjects() {
                         </Grid>
                         <Grid
                             item
-                            xs={12}
-                            sm={4}
+                            //xs={12}
+                            //sm={4}
+                            xs
                         >
                             <animated.div
-                                className={classes.cardEDU}
+                                className={classes.cardCHAT}
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsEDU({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsEDU({ xys: [0, 0, 1] })}
                                 style={{ transform: propsEDU.xys.interpolate(trans) }}
+                                onClick={openChatBot}
                             />
                             <CardContent>
                                 <Typography
@@ -546,7 +571,7 @@ export default function PageProjects() {
                                     align='center'
                                     className={classes.tipografia}
                                 >
-                                    Educação & Tecnologia
+                                    Chatbot
                                 </Typography>
                                 <Typography
                                     variant='body2'
@@ -555,7 +580,7 @@ export default function PageProjects() {
                                     align='center'
                                     className={classes.tipografia}
                                 >
-                                    Educação - Tecnologia & Inovação
+                                    Tecnologia & Inovação
                                 </Typography>
                             </CardContent>
                         </Grid>

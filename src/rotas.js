@@ -22,6 +22,11 @@ import AirplayOutlined from '@material-ui/icons/AirplayOutlined';
 import RealidadeVirtual from './Pages/Projetos/RealidadeVirtual/rv';
 import WbSunny from '@material-ui/icons/WbSunny';
 import EnergiaSolar from './Pages/Projetos/EnergiaSolar/energiaSolar';
+import PDDU from './Pages/Projetos/PDDU/pddu';
+import Chatbot from './Pages/Projetos/Chatbot/chatbot';
+import AndroidOutlined from '@material-ui/icons/AndroidOutlined';
+import AnnouncementOutlined from '@material-ui/icons/AnnouncementOutlined';
+import News from './Pages/News/news';
 
 const rotas = [
     {
@@ -120,6 +125,27 @@ const rotas = [
         name: 'Energia Solar',
         icon: WbSunny,
         children: EnergiaSolar,
+        layout: '/',
+    },
+    {
+        path: '/pddu',
+        name: 'Plano Diretor de Desenvolvimento Urbano',
+        icon: GavelOutlined,
+        children: PDDU,
+        layout: '/',
+    },
+    {
+        path: '/chatbot',
+        name: 'Chatbot',
+        icon: AndroidOutlined,
+        children: Chatbot,
+        layout: '/',
+    },
+    {
+        path: '/news',
+        name: 'Novidades',
+        icon: AnnouncementOutlined,
+        children: News,
         layout: '/',
     },
 ];

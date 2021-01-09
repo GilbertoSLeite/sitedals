@@ -10,7 +10,6 @@ import {
     Divider,
     Grid,
     Hidden,
-    Link,
     makeStyles,
     Typography
 } from '@material-ui/core';
@@ -25,11 +24,11 @@ const useStyles = makeStyles((theme) => ({
     media: {
         height: 450,
     },
-    cardHorta: {
+    cardPDDU: {
         margin: '0 auto',
         width: '48vw',
-        height: '76.5vw',
-        backgroundImage: `url(https://images.unsplash.com/photo-1592419391068-9bd09dd58510?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)`,
+        height: '58.7vw',
+        backgroundImage: `url(https://images.unsplash.com/photo-1547482802-54e4e97a1637?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80)`,
         borderRadius: '10px',
         backgroundSize: 'cover',
         backgroundPosition: 'center, center',
@@ -45,11 +44,11 @@ const useStyles = makeStyles((theme) => ({
         alignContent: 'center',
         justifyContent: 'center'
     },
-    cardHortaMd: {
+    cardPDDUMd: {
         margin: '0 auto',
         width: '93vw',
         height: '100vw',
-        backgroundImage: `url(https://images.unsplash.com/photo-1592419391068-9bd09dd58510?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)`,
+        backgroundImage: `url(https://images.unsplash.com/photo-1547482802-54e4e97a1637?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80)`,
         borderRadius: '10px',
         backgroundSize: 'cover',
         backgroundPosition: 'center, center',
@@ -78,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
-export default function HortaComunitaria() {
+export default function PDDU() {
 
     const classes = useStyles();
 
@@ -93,14 +92,6 @@ export default function HortaComunitaria() {
             window.location.href = url;
         }, 2100);
     };
-
-    const openPDCI = () => {
-        let url = '/pdci';
-        window.open(url, '_blank');
-        let urlTwo = '/hortacomunitaria';
-        window.location.href = urlTwo;
-    };
-
 
     return (
         <React.Fragment>
@@ -120,7 +111,7 @@ export default function HortaComunitaria() {
                         <Container maxWidth="sm">
                             <Hidden smUp>
                                 <animated.div
-                                    className={classes.cardHortaMd}
+                                    className={classes.cardPDDUMd}
                                     onMouseMove={({ clientX: x, clientY: y }) => setPropsChat({ xys: calc(x, y) })}
                                     onMouseLeave={() => setPropsChat({ xys: [0, 0, 1] })}
                                     style={{ transform: propsChat.xys.interpolate(trans) }}
@@ -128,7 +119,7 @@ export default function HortaComunitaria() {
                             </Hidden>
                             <Hidden xsDown>
                                 <animated.div
-                                    className={classes.cardHorta}
+                                    className={classes.cardPDDU}
                                     onMouseMove={({ clientX: x, clientY: y }) => setPropsChat({ xys: calc(x, y) })}
                                     onMouseLeave={() => setPropsChat({ xys: [0, 0, 1] })}
                                     style={{ transform: propsChat.xys.interpolate(trans) }}
@@ -151,8 +142,8 @@ export default function HortaComunitaria() {
                                             src={ls}
                                         />
                                     }
-                                    title='Horta Comunitária'
-                                    subheader='Economia'
+                                    title='PDDU'
+                                    subheader='Governança'
                                 />
                                 <Divider variant="middle" />
                                 <CardContent>
@@ -163,7 +154,7 @@ export default function HortaComunitaria() {
                                         variant='h5'
                                         className={classes.title}
                                     >
-                                        Desevolvimeto de Horta Comunitária
+                                        Plano Diretor de Desenvolvimento Urbano
                                     </Typography>
                                     <Divider variant="middle" />
                                     <Typography paragraph></Typography>
@@ -172,50 +163,35 @@ export default function HortaComunitaria() {
                                         variant='body1'
                                         align='justify'
                                     >
-                                        A LS Consultoria & Sistemas LTDA, presta consultoria ao Município para a criação de Hortas
-                                        Comunitárias, disponibilizando a produção entre a entidade e o parceiro através de estudo
-                                        viabilidade e criação de legislação(<Link to='/hortacomunitaria' onClick={openPDCI}>Plano Diretor de Cidade Inteligente</Link>) que permitirá ao poder público em parcerias com as
-                                        escolas técnicas, faculdade, munícipes e/ou empresas parceiras possam desenvolver em terrenos
-                                        sem utilização por parte da prefeitura e que tem gerado custo a entidade (geralmente são locais
-                                        em que são descartados resíduos sólidos de forma indevida e inadequada.
-                                      </Typography>
-                                    <Typography
-                                        paragraph
-                                        variant='body1'
-                                        align='center'
-                                        className={classes.title}
-                                    >
-                                        Vantagens para o município
+                                        Política urbana instituído, sendo descrito como “instrumento básico da política de desenvolvimento e
+                                        de expansão urbana.”, e é pelo Estatuto da Cidade, pelo Código Florestal e pela Lei de Parcelamento do
+                                        Solo Urbano.
                                     </Typography>
                                     <Typography
                                         paragraph
                                         variant='body1'
                                         align='justify'
                                     >
-                                        <li>Envolve a comunidade;</li>
-                                        <li>Auxilia na educação ambiental, estimulando a minimização na produção de resíduos, reciclagem e compostagem;</li>
-                                        <li>Empoderar as pessoas e estimula a organização comunitária, pois envolve a tomada de decisões compartilhadas, a resolução de problemas, negociações, arrecadação e distribuição financeira, entre outras coisas;</li>
-                                        <li>Valoriza o bairro e, consequentemente, o valor dos imóveis em toda a vizinhança;</li>
-                                        <li>Serve como ponto de encontro e lazer, onde as pessoas podem se conhecer e compartilhar experiências.</li>
-                                    </Typography>
-                                    <Typography
-                                        paragraph
-                                        variant='body1'
-                                        align='center'
-                                        className={classes.title}
-                                    >
-                                        Vantagens para o cidadão
+                                        Através do plano diretor, é possível definir a função social da propriedade e ainda a delimitação e
+                                        fiscalização das áreas subutilizadas, sujeitando-as ao parcelamento ou edificação compulsórios, ou
+                                        ainda, à desapropriação com pagamento de títulos e cobrança de IPTU progressivo no tempo.
                                     </Typography>
                                     <Typography
                                         paragraph
                                         variant='body1'
                                         align='justify'
                                     >
-                                        <li>Estimular hábitos alimentares saudáveis;</li>
-                                        <li>Fortalecer o convívio comunitário;</li>
-                                        <li>Exercitar a cooperação e o trabalho em equipe;</li>
-                                        <li>Favorecer a aquisição de novos conhecimentos técnicos de plantio e manejo;</li>
-                                        <li>Incentivar os participantes ao cultivo da horta.</li>
+                                        É obrigatório a criação de plano diretor:
+                                        <li>Para cidades com mais de vinte mil habitantes;</li>
+                                        <li>Cidades integrantes de regiões metropolitanas e aglomerações urbanas (de acordo com o disposto também no Art. 182 da Constituição);</li>
+                                        <li>Cidades em áreas de especial interesse turístico ou inseridas na área de influência de empreendimentos com significativo impacto ambiental.</li>
+                                    </Typography>
+                                    <Typography
+                                        paragraph
+                                        variant='body1'
+                                        align='justify'
+                                    >
+                                        Em paralelo a LS Consultoria & Sistemas LTDA dispõe do trabalho de georeferenciameno, recadastramento imobiliário, mapas e outros.
                                     </Typography>
                                     <Divider variant="middle" />
                                     <Typography paragraph></Typography>

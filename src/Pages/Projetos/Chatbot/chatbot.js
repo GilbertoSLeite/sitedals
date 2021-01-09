@@ -10,7 +10,6 @@ import {
     Divider,
     Grid,
     Hidden,
-    Link,
     makeStyles,
     Typography
 } from '@material-ui/core';
@@ -25,11 +24,11 @@ const useStyles = makeStyles((theme) => ({
     media: {
         height: 450,
     },
-    cardHorta: {
+    cardCHAT: {
         margin: '0 auto',
         width: '48vw',
-        height: '76.5vw',
-        backgroundImage: `url(https://images.unsplash.com/photo-1592419391068-9bd09dd58510?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)`,
+        height: '39.8vw',
+        backgroundImage: `url(https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80)`,
         borderRadius: '10px',
         backgroundSize: 'cover',
         backgroundPosition: 'center, center',
@@ -45,11 +44,11 @@ const useStyles = makeStyles((theme) => ({
         alignContent: 'center',
         justifyContent: 'center'
     },
-    cardHortaMd: {
+    cardCHATMd: {
         margin: '0 auto',
         width: '93vw',
         height: '100vw',
-        backgroundImage: `url(https://images.unsplash.com/photo-1592419391068-9bd09dd58510?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)`,
+        backgroundImage: `url(https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80)`,
         borderRadius: '10px',
         backgroundSize: 'cover',
         backgroundPosition: 'center, center',
@@ -78,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
-export default function HortaComunitaria() {
+export default function Chatbot() {
 
     const classes = useStyles();
 
@@ -93,14 +92,6 @@ export default function HortaComunitaria() {
             window.location.href = url;
         }, 2100);
     };
-
-    const openPDCI = () => {
-        let url = '/pdci';
-        window.open(url, '_blank');
-        let urlTwo = '/hortacomunitaria';
-        window.location.href = urlTwo;
-    };
-
 
     return (
         <React.Fragment>
@@ -120,7 +111,7 @@ export default function HortaComunitaria() {
                         <Container maxWidth="sm">
                             <Hidden smUp>
                                 <animated.div
-                                    className={classes.cardHortaMd}
+                                    className={classes.cardCHATMd}
                                     onMouseMove={({ clientX: x, clientY: y }) => setPropsChat({ xys: calc(x, y) })}
                                     onMouseLeave={() => setPropsChat({ xys: [0, 0, 1] })}
                                     style={{ transform: propsChat.xys.interpolate(trans) }}
@@ -128,7 +119,7 @@ export default function HortaComunitaria() {
                             </Hidden>
                             <Hidden xsDown>
                                 <animated.div
-                                    className={classes.cardHorta}
+                                    className={classes.cardCHAT}
                                     onMouseMove={({ clientX: x, clientY: y }) => setPropsChat({ xys: calc(x, y) })}
                                     onMouseLeave={() => setPropsChat({ xys: [0, 0, 1] })}
                                     style={{ transform: propsChat.xys.interpolate(trans) }}
@@ -151,8 +142,8 @@ export default function HortaComunitaria() {
                                             src={ls}
                                         />
                                     }
-                                    title='Horta Comunitária'
-                                    subheader='Economia'
+                                    title='Chatbot'
+                                    subheader='Chatbot'
                                 />
                                 <Divider variant="middle" />
                                 <CardContent>
@@ -163,7 +154,7 @@ export default function HortaComunitaria() {
                                         variant='h5'
                                         className={classes.title}
                                     >
-                                        Desevolvimeto de Horta Comunitária
+                                        Chatbot
                                     </Typography>
                                     <Divider variant="middle" />
                                     <Typography paragraph></Typography>
@@ -172,50 +163,19 @@ export default function HortaComunitaria() {
                                         variant='body1'
                                         align='justify'
                                     >
-                                        A LS Consultoria & Sistemas LTDA, presta consultoria ao Município para a criação de Hortas
-                                        Comunitárias, disponibilizando a produção entre a entidade e o parceiro através de estudo
-                                        viabilidade e criação de legislação(<Link to='/hortacomunitaria' onClick={openPDCI}>Plano Diretor de Cidade Inteligente</Link>) que permitirá ao poder público em parcerias com as
-                                        escolas técnicas, faculdade, munícipes e/ou empresas parceiras possam desenvolver em terrenos
-                                        sem utilização por parte da prefeitura e que tem gerado custo a entidade (geralmente são locais
-                                        em que são descartados resíduos sólidos de forma indevida e inadequada.
-                                      </Typography>
-                                    <Typography
-                                        paragraph
-                                        variant='body1'
-                                        align='center'
-                                        className={classes.title}
-                                    >
-                                        Vantagens para o município
-                                    </Typography>
+                                        A LS Consultoria & Sistemas LTDA, desenvolveu um Chatbot, programa de computador que simula um ser
+                                        humano na conversação com as pessoas. O objetivo é responder as perguntas de tal forma que as
+                                        pessoas tenham a impressão de estar conversando com outra pessoa e não com um programa de computador.
+                                     </Typography>
                                     <Typography
                                         paragraph
                                         variant='body1'
                                         align='justify'
                                     >
-                                        <li>Envolve a comunidade;</li>
-                                        <li>Auxilia na educação ambiental, estimulando a minimização na produção de resíduos, reciclagem e compostagem;</li>
-                                        <li>Empoderar as pessoas e estimula a organização comunitária, pois envolve a tomada de decisões compartilhadas, a resolução de problemas, negociações, arrecadação e distribuição financeira, entre outras coisas;</li>
-                                        <li>Valoriza o bairro e, consequentemente, o valor dos imóveis em toda a vizinhança;</li>
-                                        <li>Serve como ponto de encontro e lazer, onde as pessoas podem se conhecer e compartilhar experiências.</li>
-                                    </Typography>
-                                    <Typography
-                                        paragraph
-                                        variant='body1'
-                                        align='center'
-                                        className={classes.title}
-                                    >
-                                        Vantagens para o cidadão
-                                    </Typography>
-                                    <Typography
-                                        paragraph
-                                        variant='body1'
-                                        align='justify'
-                                    >
-                                        <li>Estimular hábitos alimentares saudáveis;</li>
-                                        <li>Fortalecer o convívio comunitário;</li>
-                                        <li>Exercitar a cooperação e o trabalho em equipe;</li>
-                                        <li>Favorecer a aquisição de novos conhecimentos técnicos de plantio e manejo;</li>
-                                        <li>Incentivar os participantes ao cultivo da horta.</li>
+                                        O município pode escolher os setores ao qual desejará atender com o chatbot, dirimindo muitas vezes
+                                        dúvidas que demandam tempo no dia a dia e dando maior liberdade aos colaboradores do município.
+                                        Também pode ser desenvolvido chatbot a fim de atender a população com demandas diárias e atendendo de forma
+                                        mais ágil aos munícipes.
                                     </Typography>
                                     <Divider variant="middle" />
                                     <Typography paragraph></Typography>
@@ -262,5 +222,5 @@ export default function HortaComunitaria() {
                 </Grid>
             </div>
         </React.Fragment>
-    );
-};
+    )
+}

@@ -52,7 +52,8 @@ export default function Parceiros() {
                         marginleft,
                         altura,
                         largura,
-                        borderradius
+                        borderradius,
+                        url
                     }, i) => (
                         <div className={classes.sliderInternal}>
                             <CardHeader
@@ -68,6 +69,7 @@ export default function Parceiros() {
                                     width: largura,
                                     borderRadius: borderradius,
                                 }}
+                                onClick={() => window.open(url, '_blank')}
                                 className={classes.sliderImages} />
                         </div>
                     )}

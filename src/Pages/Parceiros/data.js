@@ -12,6 +12,7 @@ const data = [
         altura: 300,
         largura: 300,
         borderradius: '20px',
+        url: 'https://www.amargosa.ba.gov.br/',
     },
     {
         title: "Classcon Contabilidade",
@@ -21,6 +22,7 @@ const data = [
         altura: 300,
         largura: 300,
         borderradius: '20px',
+        url: 'https://classconcontabilidade.com/',
     },
     {
         title: "GM Data",
@@ -30,6 +32,7 @@ const data = [
         altura: 300,
         largura: 300,
         borderradius: '20px',
+        url: '/projetos',
     },
     {
         title: "RS Drone",
@@ -39,6 +42,7 @@ const data = [
         altura: 300,
         largura: 300,
         borderradius: '20px',
+        url: 'https://classconcontabilidade.com/',
     },
 ];
 
