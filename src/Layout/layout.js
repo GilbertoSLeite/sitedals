@@ -27,17 +27,20 @@ const Main = (
     </Switch>
 );
 
+
+
 export default function Layout() {
 
     return (
-        <React.Fragment>
+        <React.Fragment >
             <StyledProvider injectFirst>
-                <CssBaseline />
                 <AppBarSite />
+                <CssBaseline />
                 {Main}
                 <BackToTop size="small" />
             </StyledProvider>
             <FooterSite />
         </React.Fragment>
-    )
-}
+
+    );
+};
