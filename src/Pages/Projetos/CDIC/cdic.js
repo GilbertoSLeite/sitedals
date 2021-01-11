@@ -452,6 +452,7 @@ export default function CDCI() {
                                                     output: [1, 0.95, 0.85, 0.75, 0.65, 1.1, 0.95, 0, 85, 1.1, 1.03, 1, 1.5]
                                                 })
                                                 .interpolate(x => `scale(${x})`),
+                                            backgroundColor: '#437894',
                                         }}
                                     >
                                         PROJETOS
