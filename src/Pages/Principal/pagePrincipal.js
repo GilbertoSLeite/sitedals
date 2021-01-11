@@ -1,6 +1,6 @@
-import { CardHeader, CssBaseline, Grid, makeStyles, Typography } from '@material-ui/core';
+import { Button, CardHeader, CssBaseline, Grid, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated, useTransition } from 'react-spring';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -134,6 +134,76 @@ const useStyles = makeStyles(() => ({
     tipografia: {
         fontWeight: 800,
         userSelect: 'none'
+    },
+    main: {
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        overflow: 'hidden',
+        cursor: 'pointer',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: '#676767',
+    },
+    container: {
+        position: 'fixed',
+        zIndex: '1000',
+        width: '0 auto',
+        top: '30px',
+        bottom: '30px',
+        margin: '0 auto',
+        left: '30px',
+        right: '30px',
+        display: 'flex',
+        flexDirection: 'column',
+        pointerEvents: 'none',
+        alignItems: 'center',
+        '& @media': {
+            maxWidth: '680px',
+            alignItems: 'center'
+        },
+    },
+    button: {
+        cursor: 'pointer',
+        pointerEvents: 'all',
+        outline: 0,
+        border: '10px',
+        background: 'transparent',
+        display: 'flex',
+        alignSelf: 'flex-end',
+        overflow: 'hidden',
+        margin: 0,
+        padding: 0,
+        paddingBottom: '14px',
+        color: 'rgba(255, 255, 255, 0.5)',
+        '& :hover': {
+            color: 'rgba(255, 255, 255, 0.6)',
+        }
+    },
+    globalStyle: {
+        margin: 0,
+        padding: 0,
+        height: '100%',
+        width: '100%',
+        overflow: 'hidden',
+        userSelect: 'none',
+        background: '#f0f0f0'
+    },
+    content: {
+        color: '#fff',
+        background: '#445159',
+        opacity: '0.8',
+        padding: '12px 22px',
+        fontSize: '1em',
+        display: 'grid',
+        gridTemplateColumns: '1fr auto',
+        gridGap: '10px',
+        overflow: 'hidden',
+        height: 'auto',
+        borderRadius: '10px',
+        marginTop: '10px',
+        marginBottom: '10px',
     }
 }));
 
@@ -165,7 +235,103 @@ const openParceirosLS = () => {
     window.location.href = url;
 };
 
+let id = 0;
+
+function MessageHub({ config = { tension: 125, friction: 20, precision: 0.1 }, timeout = 3000, children }) {
+
+    const classes = useStyles();
+
+    const [refMap] = React.useState(() => new WeakMap())
+    const [cancelMap] = React.useState(() => new WeakMap())
+    const [items, setItems] = React.useState([]);
+
+    const transitions = useTransition(items, item => item.key, {
+        from: {
+            opacity: 0,
+            height: 0,
+            life: '100%'
+        },
+        enter: item => async next => await next({
+            opacity: 1,
+            height: refMap.get(item).offsetHeight
+        }),
+        leave: item => async (next, cancel) => {
+            cancelMap.set(item, cancel)
+            await next({ life: '0%' })
+            await next({ opacity: 0 })
+            await next({ height: 0 })
+        },
+        onRest: item => setItems(state => state.filter(i => i.key !== item.key)),
+        config: (item, state) => (state === 'leave' ? [{ duration: timeout }, config, config] : config),
+    })
+
+    React.useEffect(() => void children(msg => setItems(state => [...state, { key: id++, msg }])));
+
+    return (
+        <div className={classes.container}>
+            {transitions.map(({ key, item, props: { life } }) => (
+                <animated.div
+                    key={key}
+                    style={{
+                        boxSizing: 'border-box',
+                        position: 'relative',
+                        overflow: 'hidden',
+                        width: '40ch',
+                        '& @media': {
+                            maxWidth: '680px',
+                            width: '100%',
+                        }
+                    }}
+                >
+                    <div
+                        className={classes.content}
+                        ref={ref => ref && refMap.set(item, ref)}
+                    >
+                        <animated.div style={{
+                            right: life,
+                            position: 'absolute',
+                            bottom: '0',
+                            left: '0px',
+                            width: 'auto',
+                            height: '5px',
+                            background: 'linear-gradient(130deg, #00b4e6, #00f0e0)',
+                        }} />
+                        <p>{item.msg}</p>
+                        <Button
+                            onClick={e => {
+                                e.stopPropagation()
+                                cancelMap.has(item) && cancelMap.get(item)()
+                            }}>
+                        </Button>
+                    </div>
+                </animated.div>
+            ))}
+        </div>
+    )
+};
+var count = 0;
+function Mensagem() {
+
+    var msg = [
+        'Estamos criando está página.',//0
+        'Sério, estamos criando, acredite!',//1
+        'Opa! Parece que quer muito falar conosco.',//2
+        'Tá Bom! Enquanto essa página não está pronta, posso lhe oferecer uma e-mail.',//3
+        'Hum, ok! Mande um e-mail para contato@lsconsultorias.srv.br',//4
+        'Já foi! Agora acabou, sério!',//5
+        'Opa! Você novamente? Já dei o e-mail: contato@lsconsultorias.srv.br',//6
+        'Xau! Vamos para página principal, ok?',//7
+    ];
+
+    return (
+        msg[(count === 8 ? window.location.href = '/relax' : count++)]
+    );
+
+}
+
 export default function PagePrincipal() {
+
+    const ref = React.useRef(null)
 
     const classes = useStyles();
 
@@ -294,8 +460,16 @@ export default function PagePrincipal() {
                                 className={classes.cardContact}
                                 onMouseMove={({ clientX: x, clientY: y }) => setPropsContact({ xys: calc(x, y) })}
                                 onMouseLeave={() => setPropsContact({ xys: [0, 0, 1] })}
-                                style={{ transform: propsContact.xys.interpolate(trans) }}
+                                style={{
+                                    transform: propsContact.xys.interpolate(trans)
+                                }}
+                                onClick={() => ref.current(Mensagem())}
                             />
+                            <div className={classes.main}>
+                                <div className={classes.globalStyle}>
+                                    <MessageHub children={add => (ref.current = add)} />
+                                </div>
+                            </div>
                             <CardHeader
                                 title='Fale Conosco'
                                 subheader='Será um prazer lhe falar com você.'

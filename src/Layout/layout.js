@@ -27,8 +27,6 @@ const Main = (
     </Switch>
 );
 
-
-
 export default function Layout() {
 
     return (

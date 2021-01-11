@@ -70,7 +70,11 @@ export default function Relax() {
         // Set the scene background property to the resulting texture.
         scene.background = texture;
         return null;
-    }
+    };
+
+    setTimeout(() => {
+        window.location.href = '/home'
+    }, 10000);
 
     return (
         <React.Fragment>

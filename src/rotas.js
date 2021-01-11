@@ -27,6 +27,8 @@ import Chatbot from './Pages/Projetos/Chatbot/chatbot';
 import AndroidOutlined from '@material-ui/icons/AndroidOutlined';
 import AnnouncementOutlined from '@material-ui/icons/AnnouncementOutlined';
 import News from './Pages/News/news';
+import AirlineSeatFlat from '@material-ui/icons/AirlineSeatFlat';
+import Relax from './Pages/Relax/relax';
 
 const rotas = [
     {
@@ -146,6 +148,13 @@ const rotas = [
         name: 'Novidades',
         icon: AnnouncementOutlined,
         children: News,
+        layout: '/',
+    },
+    {
+        path: '/relax',
+        name: 'Relax',
+        icon: AirlineSeatFlat,
+        children: Relax,
         layout: '/',
     },
 ];
