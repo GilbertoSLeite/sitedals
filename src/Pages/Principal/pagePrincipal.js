@@ -316,7 +316,7 @@ function Mensagem() {
         'Estamos criando está página.',//0
         'Sério, estamos criando, acredite!',//1
         'Opa! Parece que quer muito falar conosco.',//2
-        'Tá Bom! Enquanto essa página não está pronta, posso lhe oferecer uma e-mail.',//3
+        'Tá Bom! Enquanto essa página não está pronta, posso lhe oferecer um e-mail.',//3
         'Hum, ok! Mande um e-mail para contato@lsconsultorias.srv.br',//4
         'Já foi! Agora acabou, sério!',//5
         'Opa! Você novamente? Já dei o e-mail: contato@lsconsultorias.srv.br',//6
