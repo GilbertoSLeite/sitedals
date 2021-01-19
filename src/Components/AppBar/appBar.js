@@ -31,7 +31,10 @@ export default function AppBarSite() {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static" color='transparent' >
+            <AppBar
+                position="static"
+                color='transparent'
+            >
                 <Toolbar>
                     <Tooltip
                         arrow

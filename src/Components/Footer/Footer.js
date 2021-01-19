@@ -25,11 +25,7 @@ const tema = createMuiTheme({
     }
 })
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        backgroundColor: theme.palette.text.primary,
-    },
+const useStyles = makeStyles(() => ({
     imagem: {
         backgroundImage: `url(${ls})`,
         backgroundRepeat: 'no-repeat',
@@ -38,48 +34,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundPosition: 'center',
         color: 'transparent',
     },
-    container: {
-        marginTop: theme.spacing(8),
-        marginBottom: theme.spacing(8),
-        display: 'flex',
-    },
-    iconsWrapper: {
-        height: 120,
-    },
-    icons: {
-        display: 'flex',
-    },
-    icon: {
-        width: 48,
-        height: 48,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: theme.palette.warning.main,
-        marginRight: theme.spacing(1),
-        '&:hover': {
-            backgroundColor: theme.palette.warning.dark,
-        },
-    },
-    colorIcon: {
-        color: "#199e48",
-    },
-    list: {
-        margin: 0,
-        listStyle: 'none',
-        padding: 0,
-    },
-    listItem: {
-        paddingTop: theme.spacing(0.5),
-        paddingBottom: theme.spacing(0.5),
-    },
-    language: {
-        marginTop: theme.spacing(1),
-        width: 150,
-    },
-    footer: {
-        color: "#FFFFF"
-    }
 }));
 
 export default function FooterSite() {
@@ -109,8 +63,8 @@ export default function FooterSite() {
                         LS Consultoria & Sistemas LTDA
                     </Footer.Item>
                     <Footer.Item
-                        icon={<AccountCircle className={classes.footer} />}
-                        className={classes.footer} onClick={newTabLS}>
+                        icon={<AccountCircle />}
+                        onClick={newTabLS}>
                         Institucional
                     </Footer.Item>
                     <Footer.Item
