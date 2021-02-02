@@ -5,16 +5,27 @@ import {
 import {
     Switch,
     Route,
-    Redirect,
 } from "react-router-dom";
 import rotas from '../rotas';
 import { BackToTop, StyledProvider } from 'components-extra';
 import AppBarSite from '../Components/AppBar/appBar';
 import FooterSite from '../Components/Footer/Footer';
+import { createBrowserHistory } from "history";
+
+const hist = createBrowserHistory();
+const pathname = hist.location.pathname;
+
+function FilterRoutes(value) {
+    if (pathname === value.path) {
+        return value
+    }
+};
+
+const rota = rotas.map(x => x).filter(FilterRoutes);
 
 const Main = (
     <Switch>
-        {rotas.map((dados, chaves) => {
+        {rota.map((dados, chaves) => {
             return (
                 <Route
                     path={dados.path}
@@ -23,7 +34,6 @@ const Main = (
                 />
             );
         })}
-        <Redirect from="/" to="/home" />
     </Switch>
 );
 
